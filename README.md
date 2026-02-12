@@ -68,6 +68,7 @@ docker run -it --name machineA --network net192 --ip 192.168.1.10 ubuntu bash
 - Created a normal user and added to the sudo group
 - Connected only to the 192 network
 
+![Machine A](screenshots/MachineA.png)
 ## 🖥️ Machine B (Pivot Machine)
 
 ```bash
