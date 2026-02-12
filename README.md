@@ -69,6 +69,8 @@ docker run -it --name machineA --network net192 --ip 192.168.1.10 ubuntu bash
 - Connected only to the 192 network
 
 ![Machine A](screenshots/MachineA.png)
+
+
 ## 🖥️ Machine B (Pivot Machine)
 
 ```bash
@@ -79,6 +81,9 @@ docker network connect --ip 10.0.0.20 net10 machineB
 - Connected to both 192 and 10 networks
 - Acts as a bridge between networks
 - Used for pivoting and firewall evasion
+
+![Machine B](screenshots/MachineB.png)
+
 
 ## 🖥️ Machine C (Target Machine)
 
@@ -93,6 +98,9 @@ apt update
 apt install openssh-server apache2 -y
 service ssh start
 ```
+
+![Machine C](screenshots/MachineC.png)
+
 
 ## 🔥 Firewall Container Configuration
 
@@ -111,6 +119,7 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 iptables -A FORWARD -j LOG
 ```
 
+![Firewall](screenshots/Firewall.png)
 
 
 ## 🚨 Firewall Evasion Scenario
